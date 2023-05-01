@@ -15,34 +15,37 @@
               "sets": "5"
             }
           ]
-        }
-      ]
-    },
-    {
-      "firstname": "Jake",
-      "username": "jake1234",
-      "password": "1234",
-      "id": 2,
-      "records": [
+        },
         {
-          "date": "28/04/2023",
+          "date": "29/04/2023",
           "record": [
             {
-              "workout": "overhead press",
+              "workout": "Bench Press",
+              "reps": "5",
+              "sets": "5"
+            },
+            {
+              "workout": "Dips",
               "reps": "5",
               "sets": "5"
             }
           ]
         },
         {
-          "date": "29/04/2023",
-          "record": [
-            {
-              "workout": "bench press",
-              "reps": "5",
-              "sets": "5"
-            }
-          ]
+          "date": "01/05/2023",
+          "record": []
+        }
+      ]
+    },
+    {
+      "firstname": "Yehwan",
+      "username": "yehwan1234",
+      "password": "1234",
+      "id": 2,
+      "records": [
+        {
+          "date": "01/05/2023",
+          "record": []
         }
       ]
     }

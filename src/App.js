@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
@@ -6,10 +6,11 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import MyPage from './components/MyPage';
+import "./style/App.css"
 
 function App() {
   return (
-    <div className="app">
+      <div className="app">
       <Header/>
       <Router>
         <Routes>

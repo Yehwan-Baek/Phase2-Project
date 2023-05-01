@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
+import { Button, TextField } from '@mui/material'
+import "../style/SignUp.css"
 
 function SignIn () {
     const navigate = useNavigate();
@@ -36,28 +38,32 @@ function SignIn () {
     }
 
     return(
-        <div>
+        <div className="sign">
             <h2>Sign In</h2>
             <form onSubmit={handleSignIn}>
                 <div>
-                    <label>User Name : </label>
-                    <input 
+                    <TextField 
                         type="text"
+                        label="Username"
                         id="username"
                         value={formData.username}
                         onChange={handleChange}
+                        InputLabelProps={{style: { color: 'white' },}}
+                        inputProps={{ style: { color: 'white' } }}
                     />
                 </div>
                 <div>
-                    <label>Password : </label>
-                    <input
+                    <TextField
                         type="password"
+                        label="Password"
                         id="password"
                         value={formData.password}
                         onChange={handleChange}
+                        InputLabelProps={{style: { color: 'white' },}}
+                        inputProps={{ style: { color: 'white' } }}
                     />
                 </div>
-                <button type="submit">Sign Up!</button>
+                <Button variant="contained" type="submit" className="button">Sign In</Button>
             </form>
         </div>
     )

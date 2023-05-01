@@ -1,10 +1,12 @@
 import React from "react";
+import "../style/Home.css"
 
 function Home() {
     return(
-        <div>
-            <h2>Recordi your work out!</h2>
-            <p>You can review your work out history by this app!</p>
+        <div className="home">
+            <h2>Record your workout!</h2>
+            <p>You can review your workout and plan daily routine!</p>
+            <p>Join us now!!</p>
         </div>
     )
 }

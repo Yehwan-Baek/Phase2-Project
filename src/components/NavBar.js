@@ -1,19 +1,20 @@
 import React from "react";
 import {Outlet, Link} from "react-router-dom"
+import "../style/NavBar.css"
 
 function NavBar() {
     return (
         <React.Fragment>
             <nav>
-                <ul>
+                <ul className="ul">
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/">HOME</Link>
                     </li>
                     <li>
-                        <Link to="/signup">Sign Up</Link>
+                        <Link to="/signup">SIGN UP</Link>
                     </li>
                     <li>
-                        <Link to="/signin">Sign In</Link>
+                        <Link to="/signin">SIGN IN</Link>
                     </li>
                 </ul>
             </nav>

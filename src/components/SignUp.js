@@ -1,4 +1,6 @@
 import React,{useState} from "react";
+import { Button, TextField } from '@mui/material'
+import "../style/SignUp.css"
 
 function SignUp () {
     const [users, setUsers] = useState([])
@@ -71,40 +73,49 @@ function SignUp () {
     }
 
     return(
-        <div>
+        <div className="sign">
             <h2>Sign Up</h2>
             <form onSubmit={handleSignUp}>
                 <div>
-                    <label>First Name : </label>
-                    <input 
+                    <TextField 
                     type="text"
+                    label="First Name"
                     id="firstname"
                     name="firstname"
                     value={formData.firstname}
                     onChange={onChangeInfo}
+                    className="input"
+                    InputLabelProps={{style: { color: 'white' },}}
+                    inputProps={{ style: { color: 'white' } }}
                     />
                 </div>
                 <div>
-                    <label>User Name : </label>
-                    <input 
+                    <TextField 
                     type="text"
+                    label="Username"
                     id="username"
                     name="username"
                     value={formData.username}
                     onChange={onChangeInfo}
+                    className="input"
+                    InputLabelProps={{style: { color: 'white' },}}
+                    inputProps={{ style: { color: 'white' } }}
                     />
                 </div>
                 <div>
-                    <label>Password : </label>
-                    <input
+                    <TextField
                     type="password"
+                    label="Password"
                     id="password"
                     name="password"
                     value={formData.password}
                     onChange={onChangeInfo}
+                    className="input"
+                    InputLabelProps={{style: { color: 'white' },}}
+                    inputProps={{ style: { color: 'white' } }}
                     />
                 </div>
-                <button type="submit">Sign Up!</button>
+                <Button variant="contained" type="submit" className="button">Sign Up</Button>
             </form>
         </div>
     )

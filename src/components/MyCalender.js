@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Records from './Records';
+import { Button, TextField , Grid } from '@mui/material'
 
 function MyCalendar() {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -56,7 +57,6 @@ function MyCalendar() {
         const newData = { ...userData, records: updatedRecords };
         setUserData(newData);
         saveDataToServer(newData);
-        console.log(`Exercise record saved for ${userId}`);
       }
     }
   };
@@ -84,41 +84,71 @@ function MyCalendar() {
   }
 
   return (
-    <div>
-      <h3>Select a date</h3>
-      <DatePicker
-        selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        dateFormat="yyyy-MM-dd"
-        showYearDropdown={true}
-        showMonthDropdown={true}
-        dropdownMode="select"
-        inline
-      />
-      <div>
-        Selected date: {selectedDate ? selectedDate.toLocaleDateString() : 'None'}
-        <br />
+    <Grid container spacing={4}>
+      <Grid item xs={4} md={4}>
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          dateFormat="yyyy-MM-dd"
+          showYearDropdown={true}
+          showMonthDropdown={true}
+          dropdownMode="select"
+          inline
+          className='calendar'
+        />
+      </Grid>
+      <Grid item xs={4} md={4}>
+        <div>
+          <p>{selectedDate ? selectedDate.toLocaleDateString() : 'None'}</p>
+        </div>
         <form onSubmit={handleSubmit}>
-          <div >
-            <label>Workout:</label>
-            <input type="text" value={exerciseRecord.workout} onChange={(e) => setExerciseRecord({...exerciseRecord, workout: e.target.value})} />
-          </div>
-          <div>
-            <label>Reps:</label>
-            <input type="number" value={exerciseRecord.reps} onChange={(e) => setExerciseRecord({...exerciseRecord, reps: e.target.value})} />
-          </div>
-          <div>
-            <label>Sets:</label>
-            <input type="number" value={exerciseRecord.sets} onChange={(e) => setExerciseRecord({...exerciseRecord, sets: e.target.value})} />
-          </div>
-          <button>Save</button>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                type="text"
+                label="Workout" 
+                value={exerciseRecord.workout} 
+                onChange={(e) => setExerciseRecord({...exerciseRecord, workout: e.target.value})} 
+                fullWidth
+                InputLabelProps={{style: { color: 'white' },}}
+                inputProps={{ style: { color: 'white' } }}
+              />
+            </Grid>
+            <Grid item xs={4} md={4}>
+              <TextField 
+                type="number"
+                label="Reps"
+                value={exerciseRecord.reps} 
+                onChange={(e) => setExerciseRecord({...exerciseRecord, reps: e.target.value})} 
+                fullWidth
+                InputLabelProps={{style: { color: 'white' },}}
+                inputProps={{ style: { color: 'white' } }}
+              />
+            </Grid>
+            <Grid item xs={4} md={4}>
+              <TextField 
+                type="number"
+                label="Sets"
+                value={exerciseRecord.sets} 
+                onChange={(e) => setExerciseRecord({...exerciseRecord, sets: e.target.value})} 
+                fullWidth
+                InputLabelProps={{style: { color: 'white' },}}
+                inputProps={{ style: { color: 'white' } }}
+              />
+            </Grid>
+            <Grid item xs={4} md={4}>
+              <Button type="submit" variant="contained" className='button' fullWidth>Save</Button>
+            </Grid>
+          </Grid>
         </form>
-      </div>
-      {userData?.records?.some(record => record.date === selectedDate.toLocaleDateString()) 
-        ? <Records userData={userData} selectedDate={selectedDate} onDelete={deleteExercise}/>
-        : <p>No records found.</p>
-      }
-    </div>
+      </Grid>
+      <Grid item xs={4} md={4}>
+        {userData?.records?.some(record => record.date === selectedDate.toLocaleDateString()) 
+          ? <Records userData={userData} selectedDate={selectedDate} onDelete={deleteExercise}/>
+          : null
+        }
+      </Grid>
+    </Grid>
   );
 }
 
