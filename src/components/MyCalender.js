@@ -59,6 +59,7 @@ function MyCalendar() {
         saveDataToServer(newData);
       }
     }
+    setExerciseRecord({ workout: "", reps: 0, sets: 0 });
   };
 
   const saveDataToServer = (data) => {
@@ -112,6 +113,7 @@ function MyCalendar() {
                 fullWidth
                 InputLabelProps={{style: { color: 'white' },}}
                 inputProps={{ style: { color: 'white' } }}
+                required
               />
             </Grid>
             <Grid item xs={4} md={4}>
@@ -123,6 +125,7 @@ function MyCalendar() {
                 fullWidth
                 InputLabelProps={{style: { color: 'white' },}}
                 inputProps={{ style: { color: 'white' } }}
+                required
               />
             </Grid>
             <Grid item xs={4} md={4}>
@@ -134,6 +137,7 @@ function MyCalendar() {
                 fullWidth
                 InputLabelProps={{style: { color: 'white' },}}
                 inputProps={{ style: { color: 'white' } }}
+                required
               />
             </Grid>
             <Grid item xs={4} md={4}>

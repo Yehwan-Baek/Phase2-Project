@@ -23,17 +23,8 @@
               "workout": "Bench Press",
               "reps": "5",
               "sets": "5"
-            },
-            {
-              "workout": "Dips",
-              "reps": "5",
-              "sets": "5"
             }
           ]
-        },
-        {
-          "date": "01/05/2023",
-          "record": []
         }
       ]
     },
@@ -44,10 +35,32 @@
       "id": 2,
       "records": [
         {
-          "date": "01/05/2023",
+          "date": "19/05/2023",
           "record": []
+        },
+        {
+          "date": "18/05/2023",
+          "record": [
+            {
+              "workout": "bench press",
+              "reps": "5",
+              "sets": "5"
+            }
+          ]
         }
       ]
+    },
+    {
+      "firstname": "Yehwan",
+      "username": "baekokok98",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "firstname": "Jake",
+      "username": "jake1234",
+      "password": "1234",
+      "id": 4
     }
   ]
 }

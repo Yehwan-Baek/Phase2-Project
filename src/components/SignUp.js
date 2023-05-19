@@ -8,7 +8,6 @@ function SignUp () {
         firstname:"",
         username:"",
         password:"",
-
     })
     
     function onAddUsers(newUser) {
@@ -70,6 +69,7 @@ function SignUp () {
                 });
             }
         });
+        setFormData({firstname:"", username:"", password:"",})
     }
 
     return(
